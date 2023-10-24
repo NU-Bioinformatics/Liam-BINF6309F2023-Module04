@@ -9,4 +9,19 @@ output:
     toc_float: true
 ---
 
+library(knitr)
 
+# Salmon publication review
+
+paper: Borlase et al, "Cross-species analysis of SHH medulloblastoma models reveals significant inhibitory effects of trametinib on tumor progression"
+
+## Intro
+
+## Methods
+
+## Results
+
+## Conclusion
+
+
+knit("SalmonReview.Rmd", output_format = "pdf_document")
