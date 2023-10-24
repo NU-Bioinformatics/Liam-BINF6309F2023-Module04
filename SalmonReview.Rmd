@@ -2,26 +2,51 @@
 title: "SalmonReview.Rmd"
 author: "Liam McCrea"
 date: "2023-10-24"
-output: 
+output:
   html_document:
     toc: true
     toc_depth: 4
     toc_float: true
 ---
 
+```{r}
+
 library(knitr)
+
+```
+
+
 
 # Salmon publication review
 
 paper: Borlase et al, "Cross-species analysis of SHH medulloblastoma models reveals significant inhibitory effects of trametinib on tumor progression"
 
 ## Intro
+  - heterogenous nature of Medulloblastoma tumors combined with serious side-effects of usual treatment routines are grounds for improving personalized risk assessment and new therapies to match these cases. 
+  - This study comapares MEK inhibitor selumetinib to trametinib on human and mouse SSH MB tumor cell properties in vitro and in vivo to reveal differential outcomes by treatment and model type.
 
 ## Methods
+  - This group performed RNA-seq using StemCore Laboratories at Ottowa Hospital Research Institute.
+  - The methods are complex because different models require different analysis procedures eg human xenograft and tumorspheres vs mouse cells.
+  - 500ng total RNA input into Illumina mRNA library prep kit.
+  - For human cells: mapped to human reference genome using hisat2, passed through XenofilteR to remove mouse origin RNA and keep only tumorosphere target RNA, reads were quantified with salmon v1.4 against index built with GENCODE v35, DESeq2 was used to run differential expression analysis and principle component analysis was completed.
+  - for mouse cells: fastq data processed through fastp software, DESeq2 used to compare experimental groups, pathway enrichment with g:profiler for GO and BP terms, visualizations with Cytoscape. 
 
 ## Results
+  - trametinib effectively limited tumor progression and showed its value as an effective MED1/2 inhibitor through the multitude of experimental readouts, including the RNA-seq in multiple models.
+  - its specific and long-term effects could be further studied to see if this is a clinical candidate as an effective drug with less side-effects or more specialized for certain tumor types.
 
 ## Conclusion
+  - this was a great paper as an example for how to use salmon because the cell types are complex with multiple origins which showed the specificity to which certain seq analysis pipelines must be built. There are many tools and it is important to find the best for each situation, and important to add qc steps as experiments become more complex.
+
+```{r}
+# example code chunk - print table vs kable
+x <- c(1,2,3)
+y <- c(1,2,3)
+table <- table(x,y)
+table
+kable(table)
+
+```
 
 
-knit("SalmonReview.Rmd", output_format = "pdf_document")
