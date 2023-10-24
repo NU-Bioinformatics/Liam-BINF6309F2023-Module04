@@ -3,4 +3,4 @@
 
 ## contents
 - module 4 assignment materials
-- Salmon publication review in Rmd file 
+- Salmon publication review in Rmd file - SalmonReview.Rmd and SalmonReview.html
